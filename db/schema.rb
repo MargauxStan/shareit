@@ -33,24 +33,6 @@ ActiveRecord::Schema.define(version: 2021_01_07_154954) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.date "starts_at"
-    t.date "ends_at"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_bookings_on_item_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "conversations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -69,6 +51,16 @@ ActiveRecord::Schema.define(version: 2021_01_07_154954) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_demands_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -124,7 +116,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_154954) do
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
-
+  
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -143,11 +135,10 @@ ActiveRecord::Schema.define(version: 2021_01_07_154954) do
 
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
-  add_foreign_key "demands", "users"
-  add_foreign_key "friendships", "users"
   add_foreign_key "conversations", "users", column: "guest_id"
   add_foreign_key "conversations", "users", column: "host_id"
   add_foreign_key "demands", "users"
+  add_foreign_key "friendships", "users"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
   add_foreign_key "messages", "conversations"
