@@ -6,5 +6,9 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  has_many :conversations
+  has_many :messages
+  has_many :items
+  has_many :bookings
 
 end
