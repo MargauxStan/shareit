@@ -3,7 +3,6 @@ class Booking < ApplicationRecord
   belongs_to :item
 
   validates :starts_at, :ends_at, presence: true
-  validates :starts_at_after_ends_at
   
   def starts_at_after_ends_at
     if ends_at < starts_at
