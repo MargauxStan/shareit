@@ -1,0 +1,12 @@
+<div class="container">
+  <h2><%= @item.name %></h2>
+  Category : <%= @item.category.name %>
+  <br>
+  <%= @item.description %>
+  <br>
+  <%= link_to "Tous vos objets", items_path %>
+  <br>
+  <%= link_to "Editer", edit_item_path(@item) %>
+  <br>
+  <%= link_to "Destroy", item_path(@item), method: :delete %>
+</div>
