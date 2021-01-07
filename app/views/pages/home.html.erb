@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="logo-home">
+        <%= image_tag "logo-blue.png", class: "logo-big" %>
+      </div>
+      <h2 class="medium-white-title d-flex justify-content-center">Bienvenue</h2>
+      <div class="log-buttons">
+        <%= link_to "Se connecter", new_user_session_path, class:"button-white" %>
+        <%= link_to "S'enregistrer", new_user_registration_path , class: "button-white" %>
+      </div>
+    </div>
+  </div>
+</div>
