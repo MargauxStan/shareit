@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   has_many :conversations
   has_many :massages
+  has_many :items
+  has_many :bookings
+
 end
