@@ -38,10 +38,19 @@ electromenager = Category.create(name: "Electroménager")
 bricolage = Category.create(name: "Bricolage")
 jardinage = Category.create(name: "Jardinage")
 loisir = Category.create(name: "Loisir")
+
 puts "#{Category.count} categories created"
 
 puts "-------------------------------"
 
+friendship1 = Friendship.create!(user: user1, friend: user2, status: true)
+friendship1_reciprocity = Friendship.create!(user: user2, friend: user1, status: true)
+friendship2 = Friendship.create!(user: user3, friend: user4, status: true)
+friendship2_reciprocity = Friendship.create!(user: user4, friend: user3, status: true)
+
+puts "#{Friendship.count / 2} friendships created"
+
+puts "-------------------------------"
 
 
 
