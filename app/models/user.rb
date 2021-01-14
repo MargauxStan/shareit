@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   has_many :conversations
-  has_many :messages
-  has_many :items
-  has_many :bookings
+  has_many :messages, dependent: :destroy
+  has_many :items, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
 end
