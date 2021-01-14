@@ -1,11 +1,20 @@
-.destroy-item {
+.destroy-item-button {
   color: red;
-  border: 1px solid red;
+  position: absolute;
+  top: 5%;
+  right: 3%;
 }
 
-.show-item {
+.show-item-button {
   color: lime;
   border: 1px solid lime;
+}
+
+.add-item-button {
+  color: $blue-purple;
+  border: 1px solid $blue-purple;
+  padding: 2%;
+  border-radius: 15px;
 }
 
 .button-white {

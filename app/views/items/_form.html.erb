@@ -3,4 +3,5 @@
   <%= f.input :description %>
   <%= f.input :category_id, collection: Category.all %>
   <%= f.submit %>
+  <%= link_to "Retour", items_path, class: "destroy-item-button" %>
 <% end %>

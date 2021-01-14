@@ -29,9 +29,11 @@ import "../plugins/flatpickr"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { picker } from '../plugins/flatpickr';
+import { clickableItemCards } from '../components/cards'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   picker();
+  clickableItemCards();
 });

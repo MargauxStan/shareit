@@ -1,7 +1,23 @@
 .item-card {
   background-color: #485BFF;
   color: white;
+  margin: 5%;
+  padding: 5%;
   border-radius: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  .image-item {
+    border: 1px solid white;
+    background-color: white;
+    color: $background;
+    width: 100%;
+  }
+  .description-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
 }
 
 
