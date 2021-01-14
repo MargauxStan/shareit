@@ -5,8 +5,23 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 1vh 2vh 0 2vh;
+  & a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  & p{
+    font-size: 10px;
+  }
 }
 
 .nav-icon{
   height: 5vh;
-}
+  }
+
+.nav-add {
+  height: 6vh;
+  }

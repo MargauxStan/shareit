@@ -1,18 +1,23 @@
 <div class="navbar_m">
   <%= link_to root_path do %>
     <%= image_tag "home.png", class:"nav-icon" %>
+    <p>ACCUEIL</p>
   <% end %>
   <%= link_to root_path do %>
     <%= image_tag "loupe.png", class:"nav-icon" %>
+    <p>CHERCHER</p>
   <% end %>
-  <%= link_to root_path do %>
-    <%= image_tag "ajout.png", class:"nav-icon" %>
+  <%= link_to root_path, id: "add" do %>
+    <%= image_tag "ajout.png", class:"nav-add" %>
+    <p>    </p>
   <% end %>
   <%= link_to root_path do %>
     <%= image_tag "mail.png", class:"nav-icon" %>
+    <p>MESSAGES</p>
   <% end %>
   <%= link_to root_path do %>
     <%= image_tag "menu.png", class:"nav-icon" %>
+    <p>MENU</p>
   <% end %>
 
 </div>
