@@ -1,8 +1,16 @@
-<div class="container">
-  <h2>Tous vos objets en location</h2>
-  <% @items.each do |item| %>
-    <li> <%= item.name %> <%= link_to "Voir", item_path(item) %> <%= link_to "Destroy", item_path(item), method: :delete %> </li> 
-  <% end %>
+<div class="blue-background">
+  <h3>Accueil</h3>
+  <div class="container page-container">
+    <h4>Tous vos objets en location</h4>
+    <% @items.each do |item| %>
+      <div class="item-card">
+        <li class="list-unstyled">
+          <%= item.name %> <%= link_to "Voir", item_path(item), class: "show-item" %>
+          <%= link_to "Destroy", item_path(item), method: :delete, class: "destroy-item" %>
+        </li> 
+      </div>
+    <% end %>
 
-  <%= link_to "Ajouter un objet", new_item_path %>
+    <%= link_to "Ajouter un objet", new_item_path %>
+  </div>
 </div>
