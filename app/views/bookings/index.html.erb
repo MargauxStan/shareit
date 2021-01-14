@@ -1,0 +1,7 @@
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <li>
+      <p><%= booking.item.name %> <%= booking.starts_at %> <%= booking.ends_at %> <%= link_to "Voir", item_booking_path(booking.item, booking) %></p>
+    </li>
+  <% end %>
+</div>

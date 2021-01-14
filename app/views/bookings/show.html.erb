@@ -1,0 +1,7 @@
+<div class="container">
+  <h2> <%= @booking.item.name %> prêté par <%= @booking.item.user.email %></h2>
+  <p><%= @booking.starts_at %> <%= @booking.ends_at %></p>
+  Status: <%= @booking.status %>
+  <br>
+  <%= link_to "Vos réservations", item_bookings_path(@booking.item) %>
+</div>

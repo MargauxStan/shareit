@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Tous vos objets en location</h2>
+  <% @items.each do |item| %>
+    <li> <%= item.name %> <%= link_to "Voir", item_path(item) %> <%= link_to "Destroy", item_path(item), method: :delete %> </li> 
+  <% end %>
+
+  <%= link_to "Ajouter un objet", new_item_path %>
+</div>
