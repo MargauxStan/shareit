@@ -33,11 +33,11 @@ puts "#{User.count} users created"
 
 puts "-------------------------------"
 
-ameublement = Category.create(name: "Ameublement")
-electromenager = Category.create(name: "Electroménager")
-bricolage = Category.create(name: "Bricolage")
-jardinage = Category.create(name: "Jardinage")
-loisir = Category.create(name: "Loisir")
+ameublement = Category.create!(name: "Ameublement")
+electromenager = Category.create!(name: "Electroménager")
+bricolage = Category.create!(name: "Bricolage")
+jardinage = Category.create!(name: "Jardinage")
+loisir = Category.create!(name: "Loisir")
 
 puts "#{Category.count} categories created"
 
@@ -49,6 +49,40 @@ friendship2 = Friendship.create!(user: user3, friend: user4, status: true)
 friendship2_reciprocity = Friendship.create!(user: user4, friend: user3, status: true)
 
 puts "#{Friendship.count / 2} friendships created"
+
+puts "-------------------------------"
+
+pelle = Item.new(name: "pelle", description: "rien à dire, elle est top", state: "correct" )
+pelle.category = jardinage
+pelle.user = user1
+pelle.save
+
+raclette  = Item.new(name: "appareil à raclette", description: "pour un fromage bien fondant, je recommande", state: "quasi neuve" )
+raclette.category = electromenager
+raclette.user = user1
+raclette.save
+
+echelle = Item.new(name: "échelle", description: "pas très stable, c'est à vos rsiqes et périls", state: "bancale" )
+echelle.category = bricolage
+echelle.user = user2
+echelle.save
+
+tondeuse = Item.new(name: "tondeuse", description: "supersonic", state: "neuve" )
+tondeuse.category = jardinage
+tondeuse.user = user2
+tondeuse.save
+
+scie = Item.new(name: "scie", description: "plutôt pour le bois", state: "très affutée" )
+scie.category = jardinage
+scie.user = user3
+scie.save
+
+fondue = Item.new(name: "appareil à fondue", description: "je l'adore !! ", state: "date un peu mais marche très bien" )
+fondue.category = electromenager
+fondue.user = user3
+fondue.save
+
+puts "#{Item.count} items created"
 
 puts "-------------------------------"
 
