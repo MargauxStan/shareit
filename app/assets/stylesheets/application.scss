@@ -14,9 +14,25 @@
 @import "pages/index";
 
 body {
-  background-color: #485BFF;
+  background-color: $background;
   text-align: center;
   color: white;
   margin: 4% 0%;
 }
 
+.page-container {
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 15px;
+  padding: 5%;
+}
+
+a {
+  text-decoration: none !important;
+  text-decoration-style: none !important;
+  &:hover {
+    text-decoration: none !important;
+    text-decoration-style: none !important;
+  }
+}
